@@ -20,3 +20,4 @@ Networking
 Multithreading
 3D renderer
 Web browser
+Full 1080p resolution instead of mode 13h
