@@ -25,7 +25,7 @@ int 0x13                ; no error management, do your homework!
                                     
 mov ah, 0x0
 mov al, 0x13
-int 0x10                ; graphics mode 13h (320x200 256 colors)
+int 0x10                ; graphics mode 13h (320x200 with 256 colors)
 
 
 CODE_SEG equ GDT_code - GDT_start
@@ -72,7 +72,7 @@ GDT_descriptor:
 
 [bits 32]
 start_protected_mode:
-    mov ax, DATA_SEG
+    	mov ax, DATA_SEG
 	mov ds, ax
 	mov ss, ax
 	mov es, ax
