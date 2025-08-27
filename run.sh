@@ -1,6 +1,6 @@
 nasm "boot.asm" -f bin -o "bins/boot.bin"
 nasm "kernel_entry.asm" -f elf -o "bins/kernel_entry.o"
-i386-elf-g++ -ffreestanding -m32 -g -c "kernel.cpp" -o "bins/kernel.o"
+i386-elf-gcc -ffreestanding -m32 -g -c "kernel.c" -o "bins/kernel.o"
 nasm "zeroes.asm" -f bin -o "bins/padding.bin"
 
 i386-elf-ld -o "bins/full_kernel.bin" -Ttext 0x1000 "bins/kernel_entry.o" "bins/kernel.o" --oformat binary
